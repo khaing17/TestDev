@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="./style.css" />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
@@ -40,12 +48,14 @@
     </header>
     <!-- Hero Section -->
     <main class="" id="section-hero">
-      <div class="flex flex-col-reverse md:flex-row items-center relative">
+      <div
+        class="flex flex-col-reverse md:flex-row md:space-y-2 space-y-0 items-center relative"
+      >
         <div class="flex-1">
           <h1
             class="lg:text-8xl mt-6 md:mt-0 md:text-6xl sm:text-4xl text-2xl md:text-start text-center font-bold mb-4"
           >
-            Explore Beautiful World!
+            Explore <span class="text-orange-500">Beautiful</span> World!
           </h1>
         </div>
         <div class="md:flex-1 relative md:ml-0 ml-10">
@@ -108,6 +118,108 @@
         </div>
       </div>
     </main>
-    <section id="section-popular"></section>
+    <section class="py-10 px-4 bg-[#F8F3EF]" id="section-popular ">
+      <div class="flex justify-between items-end text-sm mb-10">
+        <h1 class="text-3xl font-bold">Popular place</h1>
+        <ul class="flex space-x-8">
+          <li class="menu-link">
+            <a href="">Beach</a>
+          </li>
+          <li class="menu-link">
+            <a href="">Mountain</a>
+          </li>
+          <li class="menu-link">
+            <a href="">Waterfall</a>
+          </li>
+          <li class="menu-link">
+            <a href="">Icebergs</a>
+          </li>
+          <li class="cursor-pointer">
+            <p class="text-orange-500 font-semibold text-sm">View All</p>
+          </li>
+        </ul>
+      </div>
+      <div class="flex space-x-4">
+        <div class="flex-1 bg-white pb-4 rounded-md">
+          <img
+            class="rounded-lg h-56 object-cover w-full"
+            src="/src/assets/image/beach1.jpg"
+            alt=""
+          />
+          <div class="px-4 pt-7">
+            <div class="flex justify-between flex-col md:flex-row">
+              <h4 class="font-semibold">Siasconset Beach</h4>
+              <div class="text-orange-500 text-sm">
+                <i class="fa-solid fa-star"></i>
+                <span class="">4.9</span>
+              </div>
+            </div>
+            <p class="mt-4">
+              <i class="fa-solid fa-location-dot text-blue-500"></i>
+              <span class="text-sm">Indonesia</span>
+            </p>
+          </div>
+        </div>
+        <div class="flex-1 bg-white pb-4 rounded-md">
+          <img
+            class="rounded-lg w-full h-56 object-cover"
+            src="/src/assets/image/beach2.jpg"
+            alt=""
+          />
+          <div class="px-4 pt-7">
+            <div class="flex justify-between flex-col md:flex-row">
+              <h4 class="font-semibold">Siasconset Beach</h4>
+              <div class="text-orange-500 text-sm">
+                <i class="fa-solid fa-star"></i>
+                <span class="">4.9</span>
+              </div>
+            </div>
+            <p class="mt-4">
+              <i class="fa-solid fa-location-dot text-blue-500"></i>
+              <span class="text-sm">Indonesia</span>
+            </p>
+          </div>
+        </div>
+        <div class="flex-1 bg-white pb-4 rounded-md">
+          <img
+            class="rounded-lg w-full h-56 object-cover"
+            src="/src/assets/image/beach3.jpg"
+            alt=""
+          />
+          <div class="px-4 pt-7">
+            <div class="flex justify-between flex-col md:flex-row">
+              <h4 class="font-semibold">Siasconset Beach</h4>
+              <div class="text-orange-500 text-sm">
+                <i class="fa-solid fa-star"></i>
+                <span class="">4.9</span>
+              </div>
+            </div>
+            <p class="mt-4">
+              <i class="fa-solid fa-location-dot text-blue-500"></i>
+              <span class="text-sm">Indonesia</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="my-20" id="section-explore">
+      <div class="flex items-center">
+        <div class="flex-1">
+          <img src="/src/assets/image/image2.png" alt="" />
+        </div>
+        <div class="flex-1 space-y-5">
+          <h1 class="text-2xl md:text-6xl font-bold">
+            Explore all corners of The world with us
+          </h1>
+          <p class="text-gray-600 font-[18px]">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia,
+            suscipit. Minima deserunt optio facere perferendis aut, sequi labore
+            beatae! Neque aperiam sit qui quam fuga cum similique perspiciatis?
+            Blanditiis, voluptas!
+          </p>
+          <div></div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
