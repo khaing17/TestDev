@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body class="container font-poppins bg-[#fff]">
+    <!-- Header & Menu -->
+    <header class="flex justify-between items-center py-5">
+      <div class="flex items-center space-x-2">
+        <img src="/logo.svg" alt="" />
+        <p class="text-xl font-bold">Touro</p>
+      </div>
+      <nav class="md:block hidden">
+        <ul class="flex space-x-4">
+          <li class="menu-link">
+            <a href="/home" class="">Home</a>
+          </li>
+          <li class="menu-link">
+            <a href="/category" class="">Category</a>
+          </li>
+          <li class="menu-link">
+            <a href="/blog" class="">Blog</a>
+          </li>
+          <li class="menu-link">
+            <a href="/about us" class="">About Us</a>
+          </li>
+        </ul>
+      </nav>
+      <div>
+        <button
+          class="px-6 py-2 text-center bg-orange-300 rounded-xl hover:opacity-75 text-white focus:ring-2 focus:ring-orange-500"
+        >
+          Login
+        </button>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <main class="" id="section-hero">
+      <div class="flex flex-col-reverse md:flex-row items-center relative">
+        <div class="flex-1">
+          <h1
+            class="lg:text-8xl mt-6 md:mt-0 md:text-6xl sm:text-4xl text-2xl md:text-start text-center font-bold mb-4"
+          >
+            Explore Beautiful World!
+          </h1>
+        </div>
+        <div class="md:flex-1 relative md:ml-0 ml-10">
+          <img
+            src="/src/assets//image/image1.png"
+            class="-rotate-x-90"
+            alt=""
+          />
+          <div
+            class="w-[70%] h-[70%] aspect-square rounded-full bg-orange-300 absolute bottom-0 left-0 -z-10"
+          ></div>
+          <img
+            src="/src/assets/svg/globe.svg"
+            alt=""
+            class="absolute top-0 left-0"
+          />
+        </div>
+      </div>
+      <!-- Reservation From -->
+      <div class="py-12 sm:pt-16">
+        <div class="bg-white sm:pb-16">
+          <div class="relative">
+            <div class="absolute inset-0"></div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="max-w-4xl mx-auto">
+                <dl class="text-sm bg-white shadow-lg sm:grid sm:grid-cols-4">
+                  <div
+                    class="flex flex-col border-b px-3 py-3 border-gray-100 sm:border-0 sm:border-r"
+                  >
+                    <dt class="order-2 mt-1 leading-6 text-gray-500">
+                      Bangladesh
+                    </dt>
+                    <dd class="order-1 text-blue-500">Located in</dd>
+                  </div>
+                  <div
+                    class="flex flex-col border-b px-3 py-3 border-gray-100 sm:border-0 sm:border-r"
+                  >
+                    <dt class="order-2 mt-1 leading-6 text-gray-500">
+                      Wed, 7 Nov
+                    </dt>
+                    <dd class="order-1 text-blue-500">Date</dd>
+                  </div>
+                  <div
+                    class="flex flex-col border-b px-3 py-3 border-gray-100 sm:border-0 sm:border-r"
+                  >
+                    <dt class="order-2 mt-1 leading-6 text-gray-500">
+                      $400-$700
+                    </dt>
+                    <dd class="order-1 text-blue-500">Price Range</dd>
+                  </div>
+                  <div
+                    class="flex cursor-pointer flex-col border-t md:py-6 py-3 bg-blue-500 items-center text-white font-semibold border-gray-100 text-center sm:border-0 sm:border-l"
+                  >
+                    Search
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <section id="section-popular"></section>
+  </body>
+</html>

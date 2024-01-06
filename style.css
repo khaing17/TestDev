@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Menu Link Hover Effect */
+.menu-link {
+  @apply font-semibold leading-normal relative;
+}
+
+.menu-link a::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: orange;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.menu-link a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
