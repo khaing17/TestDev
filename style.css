@@ -8,7 +8,13 @@
   @apply font-semibold leading-normal relative;
 }
 
-.menu-link a::after {
+.menu-link > a,
+.menu-link > p {
+  cursor: pointer;
+}
+
+.menu-link > a::after,
+.menu-link > p::after {
   content: "";
   position: absolute;
   width: 50%;
@@ -21,7 +27,16 @@
   transition: transform 0.25s ease-out;
 }
 
-.menu-link a:hover::after {
+/* .menu-link > a:hover::after,
+.menu-link > p:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+} */
+
+.menu-link > a:hover::after,
+.menu-link > p:hover::after,
+.menu-link > a.active::after,
+.menu-link > p.active::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
