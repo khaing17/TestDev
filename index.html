@@ -17,7 +17,7 @@
   </head>
   <body class="container font-poppins bg-[#fff]">
     <!-- Header & Menu -->
-    <header class="flex justify-between items-center py-5">
+    <header class="flex justify-between items-center py-5 z-20">
       <div class="flex items-center space-x-2">
         <img src="/logo.svg" alt="" />
         <p class="text-xl font-bold">Touro</p>
@@ -38,14 +38,40 @@
           </li>
         </ul>
       </nav>
-      <div>
+      <div class="flex items-center space-x-4">
         <button
-          class="px-6 py-2 text-center bg-orange-300 rounded-xl hover:opacity-75 text-white focus:ring-2 focus:ring-orange-500"
+          class="md:px-6 px-0 py-0 md:py-2 text-center bg-transparent text-sm md:text-[16px] font-semibold md:bg-orange-300 rounded-xl hover:opacity-75 md:text-white text-orange-500 md:focus:ring-2 focus:ring-0 focus:ring-orange-500"
         >
           Login
         </button>
+        <button
+          onclick="openMenu()"
+          id="menu-btn"
+          class="text-orange-500 focus:ring-1 ring-orange-500 px-2 py-2 focus:text-white focus:bg-orange-500 rounded-lg md:hidden block"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </header>
+    <!-- mobile menu -->
+    <div
+      id="menu"
+      class="fixed inset-0 z-30 w-0 h-0 flex justify-center items-center bg-white opacity-0 duration-700"
+    >
+      <button
+        onclick="closeMenu()"
+        id="close-btn"
+        class="absolute top-6 right-8 text-orange-500 hover:opacity-75 text-xl font-semibold duration-300"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <ul class="flex flex-col space-y-10">
+        <li class="menu-link"><a href=""> Home </a></li>
+        <li class="menu-link"><a href=""> Category </a></li>
+        <li class="menu-link"><a href=""> Blog </a></li>
+        <li class="menu-link"><a href=""> About us </a></li>
+      </ul>
+    </div>
     <!-- Hero Section -->
     <main class="" id="section-hero">
       <div
@@ -217,7 +243,7 @@
           <img src="/src/assets/image/image2.png" alt="" />
         </div>
         <div class="flex-1 space-y-5 text-center md:text-start mt-7 md:mt-0">
-          <h1 class="text-2xl md:text-6xl font-bold">
+          <h1 class="text-2xl md:text-4xl lg:text-6xl font-bold">
             Explore all corners of The world with us
           </h1>
           <p class="text-gray-600 text-sm text-justify px-2 md:px-0">
@@ -621,4 +647,5 @@
       </div>
     </footer>
   </body>
+  <script src="/src/js/index.js"></script>
 </html>
