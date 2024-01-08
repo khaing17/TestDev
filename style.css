@@ -9,6 +9,7 @@
 }
 
 .menu-link > a,
+.menu-link > li,
 .menu-link > p {
   cursor: pointer;
 }
@@ -43,4 +44,8 @@
 
 .example::-webkit-scrollbar {
   display: none;
+}
+
+.footer-link > li {
+  @apply hover:underline underline-offset-4 cursor-pointer decoration-orange-500;
 }
