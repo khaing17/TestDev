@@ -17,7 +17,9 @@
   </head>
   <body class="container font-poppins bg-[#fff]">
     <!-- Header & Menu -->
-    <header class="flex justify-between items-center py-5 z-20">
+    <header
+      class="flex justify-between items-center py-5 z-20 w-full duration-300"
+    >
       <div class="flex items-center space-x-2">
         <img src="/logo.svg" alt="" />
         <p class="text-xl font-bold">Touro</p>
@@ -25,16 +27,16 @@
       <nav class="md:block hidden">
         <ul class="flex space-x-4">
           <li class="menu-link">
-            <a href="/home" class="active">Home</a>
+            <a href="#section-hero" class="nav-link">Home</a>
           </li>
           <li class="menu-link">
-            <a href="/category" class="">Category</a>
+            <a href="#section-explore" class="nav-link">Explore</a>
           </li>
           <li class="menu-link">
-            <a href="/blog" class="">Blog</a>
+            <a href="#section-gallery" class="nav-link">Gallery</a>
           </li>
           <li class="menu-link">
-            <a href="/about us" class="">About Us</a>
+            <a href="#section-contact" class="nav-link">Contact Us</a>
           </li>
         </ul>
       </nav>
@@ -66,10 +68,26 @@
         <i class="fa-solid fa-xmark"></i>
       </button>
       <ul class="flex flex-col space-y-10">
-        <li class="menu-link"><a href=""> Home </a></li>
-        <li class="menu-link"><a href=""> Category </a></li>
-        <li class="menu-link"><a href=""> Blog </a></li>
-        <li class="menu-link"><a href=""> About us </a></li>
+        <li class="menu-link">
+          <a href="#section-hero" onclick="closeMenu()" class="nav-link"
+            >Home</a
+          >
+        </li>
+        <li class="menu-link">
+          <a href="#section-explore" onclick="closeMenu()" class="nav-link"
+            >Explore</a
+          >
+        </li>
+        <li class="menu-link">
+          <a href="#section-gallery" onclick="closeMenu()" class="nav-link"
+            >Gallery</a
+          >
+        </li>
+        <li class="menu-link">
+          <a href="#section-contact" onclick="closeMenu()" class="nav-link"
+            >Contact Us</a
+          >
+        </li>
       </ul>
     </div>
     <!-- Hero Section -->
@@ -145,7 +163,7 @@
       </div>
     </main>
     <!-- section popular -->
-    <section class="py-10 px-4 bg-[#F8F3EF]" id="section-popular ">
+    <section class="py-10 px-4 bg-[#F8F3EF]" id="section-popular">
       <div
         class="flex justify-between md:items-end md:flex-row flex-col space-y-6 md:space-y-0 text-sm mb-10"
       >
@@ -288,7 +306,7 @@
       </div>
     </section>
     <!-- explore places -->
-    <section class="py-10 px-4 bg-[#F8F3EF]" id="section-popular ">
+    <section class="py-10 px-4 bg-[#F8F3EF]" id="section-place">
       <div
         class="flex justify-between md:items-end md:flex-row flex-col space-y-6 md:space-y-0 text-sm mb-10"
       >
@@ -653,8 +671,10 @@
     const closeBtn = document.getElementById("close-btn");
     const nav = document.querySelector("header");
     const heroSection = document.getElementById("section-hero");
-    console.log(nav);
-
+    const popularSection = document.getElementById("section-popular");
+    console.log(popularSection);
+    const topOfPopularSection = popularSection?.offsetTop;
+    console.log(topOfPopularSection);
     /**For Menu Functionality */
     const openMenu = () => {
       menu?.classList.remove("w-0", "h-0", "opacity-0");
@@ -673,9 +693,9 @@
     const stickyNav = (entries) => {
       const [entry] = entries;
       if (!entry.isIntersecting) {
-        nav?.classList.add("fixed", "top-0", "bg-white", "w-full");
+        nav?.classList.add("sticky", "top-0", "bg-white");
       } else {
-        nav?.classList.remove("fixed", "top-0", "bg-white");
+        nav?.classList.remove("sticky", "top-0", "bg-white");
       }
       console.log(nav?.classList);
       console.log(nav?.clientWidth);
@@ -687,5 +707,23 @@
       rootMargin: `-${navHeight}px`,
     });
     headerObserver.observe(heroSection);
+    /**For Smooth Scroll*/
+    const navLinks = document.querySelectorAll(".nav-link");
+    console.log(navLinks);
+
+    navLinks.forEach((navLink) =>
+      navLink.addEventListener("click", (e) => {
+        e.preventDefault(); // Prevent the default behavior of the link
+
+        const id = e.currentTarget.getAttribute("href");
+        const targetElement = document.querySelector(id);
+
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      })
+    );
   </script>
 </html>
