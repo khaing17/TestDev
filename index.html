@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Touro | Explore Beautiful World</title>
   </head>
+  <script type="module" src="/main.js"></script>
   <body class="container font-poppins bg-[#fff]">
     <!-- Header & Menu -->
     <header
@@ -47,7 +48,6 @@
           Login
         </button>
         <button
-          onclick="openMenu()"
           id="menu-btn"
           class="text-orange-500 focus:ring-1 ring-orange-500 px-2 py-2 focus:text-white focus:bg-orange-500 rounded-lg md:hidden block"
         >
@@ -61,7 +61,6 @@
       class="fixed inset-0 z-30 w-0 h-0 flex justify-center items-center bg-white opacity-0 duration-700"
     >
       <button
-        onclick="closeMenu()"
         id="close-btn"
         class="absolute top-6 right-8 text-orange-500 hover:opacity-75 text-xl font-semibold duration-300"
       >
@@ -665,65 +664,4 @@
       </div>
     </footer>
   </body>
-  <script>
-    const menu = document.getElementById("menu");
-    const menuBtn = document.getElementById("menu-btn");
-    const closeBtn = document.getElementById("close-btn");
-    const nav = document.querySelector("header");
-    const heroSection = document.getElementById("section-hero");
-    const popularSection = document.getElementById("section-popular");
-    console.log(popularSection);
-    const topOfPopularSection = popularSection?.offsetTop;
-    console.log(topOfPopularSection);
-    /**For Menu Functionality */
-    const openMenu = () => {
-      menu?.classList.remove("w-0", "h-0", "opacity-0");
-      menu?.classList.add("w-screen", "h-screen", "opacity-100");
-    };
-
-    function closeMenu() {
-      menu?.classList.remove("w-screen", "h-screen", "opacity-100");
-      menu?.classList.add("w-0", "h-0", "opacity-0");
-    }
-
-    /**For Sticky Navbar */
-    const navHeight = nav.getBoundingClientRect().height;
-    console.log(navHeight);
-
-    const stickyNav = (entries) => {
-      const [entry] = entries;
-      if (!entry.isIntersecting) {
-        nav?.classList.add("sticky", "top-0", "bg-white");
-      } else {
-        nav?.classList.remove("sticky", "top-0", "bg-white");
-      }
-      console.log(nav?.classList);
-      console.log(nav?.clientWidth);
-    };
-
-    const headerObserver = new IntersectionObserver(stickyNav, {
-      root: null,
-      threshold: 0,
-      rootMargin: `-${navHeight}px`,
-    });
-    headerObserver.observe(heroSection);
-    /**For Smooth Scroll*/
-    const navLinks = document.querySelectorAll(".nav-link");
-    console.log(navLinks);
-
-    navLinks.forEach((navLink) =>
-      navLink.addEventListener("click", (e) => {
-        e.preventDefault(); // Prevent the default behavior of the link
-
-        const id = e.currentTarget.getAttribute("href");
-        const targetElement = document.querySelector(id);
-
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: "smooth",
-          });
-        }
-      })
-    );
-  </script>
 </html>
