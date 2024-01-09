@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Touro | Explore Beautiful World</title>
   </head>
-  <script type="module" src="/main.js"></script>
+
   <body class="container font-poppins bg-[#fff]">
     <!-- Header & Menu -->
     <header
@@ -28,10 +28,13 @@
       <nav class="md:block hidden">
         <ul class="flex space-x-4">
           <li class="menu-link">
-            <a href="#section-hero" class="nav-link">Home</a>
+            <a href="#section-hero" class="nav-link active">Home</a>
           </li>
           <li class="menu-link">
-            <a href="#section-explore" class="nav-link">Explore</a>
+            <a href="#section-popular" class="nav-link">Popular Place</a>
+          </li>
+          <li class="menu-link">
+            <a href="#section-place" class="nav-link">Explore</a>
           </li>
           <li class="menu-link">
             <a href="#section-gallery" class="nav-link">Gallery</a>
@@ -66,31 +69,26 @@
       >
         <i class="fa-solid fa-xmark"></i>
       </button>
-      <ul class="flex flex-col space-y-10">
+      <ul class="flex flex-col space-y-10 mobile-navs">
         <li class="menu-link">
-          <a href="#section-hero" onclick="closeMenu()" class="nav-link"
-            >Home</a
-          >
+          <a href="#section-hero" class="nav-link">Home</a>
         </li>
         <li class="menu-link">
-          <a href="#section-explore" onclick="closeMenu()" class="nav-link"
-            >Explore</a
-          >
+          <a href="#section-popular" class="nav-link">Popular Place</a>
         </li>
         <li class="menu-link">
-          <a href="#section-gallery" onclick="closeMenu()" class="nav-link"
-            >Gallery</a
-          >
+          <a href="#section-place" class="nav-link">Explore</a>
         </li>
         <li class="menu-link">
-          <a href="#section-contact" onclick="closeMenu()" class="nav-link"
-            >Contact Us</a
-          >
+          <a href="#section-gallery" class="nav-link">Gallery</a>
+        </li>
+        <li class="menu-link">
+          <a href="#section-contact" class="nav-link">Contact Us</a>
         </li>
       </ul>
     </div>
     <!-- Hero Section -->
-    <main class="" id="section-hero">
+    <section class="py-20" id="section-hero">
       <div
         class="flex flex-col-reverse md:flex-row md:space-y-2 space-y-0 items-center relative"
       >
@@ -160,13 +158,13 @@
           </div>
         </div>
       </div>
-    </main>
+    </section>
     <!-- section popular -->
     <section class="py-10 px-4 bg-[#F8F3EF]" id="section-popular">
       <div
         class="flex justify-between md:items-end md:flex-row flex-col space-y-6 md:space-y-0 text-sm mb-10"
       >
-        <h1 class="md:text-3xl text-xl font-bold">Popular place</h1>
+        <h1 class="md:text-3xl text-xl font-bold">Popular Place</h1>
         <ul class="flex space-x-8 overflow-x-scroll example">
           <li class="menu-link">
             <p class="active">Beach</p>
@@ -252,10 +250,7 @@
           </div>
         </div>
       </div>
-    </section>
-    <!-- section explore -->
-    <section class="my-20" id="section-explore">
-      <div class="flex items-center md:flex-row flex-col">
+      <div class="flex items-center mt-20 md:flex-row flex-col">
         <div class="flex-1 flex-nowrap">
           <img src="/src/assets/image/image2.png" alt="" />
         </div>
@@ -664,4 +659,5 @@
       </div>
     </footer>
   </body>
+  <script type="module" src="/main.js"></script>
 </html>
