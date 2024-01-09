@@ -5,16 +5,13 @@ const nav = document.querySelector("header");
 const heroSection = document.getElementById("section-hero");
 const popularSection = document.getElementById("section-popular");
 const mobileNav = document.querySelector(".mobile-navs");
-console.log(mobileNav);
 const navLinkWindow = document.querySelectorAll(".menu-link a");
-console.log(navLinkWindow);
 const topOfPopularSection = popularSection?.offsetTop;
 
 /**For Menu Functionality */
 const openMenu = () => {
   menu?.classList.remove("w-0", "h-0", "opacity-0");
   menu?.classList.add("w-screen", "h-screen", "opacity-100");
-  console.log("open");
 };
 
 const closeMenu = () => {
@@ -35,8 +32,6 @@ mobileNav?.addEventListener("click", (e) => {
 
 /**For Sticky Navbar */
 const navHeight = nav.getBoundingClientRect().height;
-console.log(navHeight);
-
 const stickyNav = (entries) => {
   const [entry] = entries;
   if (!entry.isIntersecting) {
@@ -44,8 +39,6 @@ const stickyNav = (entries) => {
   } else {
     nav?.classList.remove("sticky", "top-0", "bg-white");
   }
-  console.log(nav?.classList);
-  console.log(nav?.clientWidth);
 };
 
 const headerObserver = new IntersectionObserver(stickyNav, {
@@ -85,17 +78,12 @@ const changeNav = (entries, observer) => {
     }
   });
 };
-
-// init the observer
 const options = {
   threshold: 0.8,
 };
 
 const observer = new IntersectionObserver(changeNav, options);
-
-// target the elements to be observed
 const sections = document.querySelectorAll("section");
-console.log("Sections: " + sections);
 sections.forEach((section) => {
   observer.observe(section);
 });
